@@ -1,15 +1,21 @@
+# generated files
+*.pyc
+.cache-loader
+.deepeval
+
+# python virtual environment
+.venv
+
+# credentials and API keys
+*.env
+
+# data
+database
+data/output/*
+
+# misc
 .DS_Store
-
-# Docusaurus generated folders
-website/translated_docs/
-website/build/
-website/i18n/
-
-# Yarn build
-website/node_modules/
-
-# Generated docs
-docs/contributing.md
-
-# We use YARN
-website/package-lock.json
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local

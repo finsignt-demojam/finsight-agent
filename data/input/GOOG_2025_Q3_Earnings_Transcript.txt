@@ -1,0 +1,520 @@
+This transcript is provided for the convenience of investors only, for a full recording please see the Q3 2025 Earnings Call webcast.
+
+Operator: Welcome, everyone. Thank you for standing by for the Alphabet Third Quarter 2025 Earnings Conference Call.
+
+At this time, all participants are in a listen-only mode. After the speaker presentations, there will be a question-and-answer session. To ask a question during the session, you will need to press *1 on your telephone.
+
+I would now like to hand the conference over to your speaker today, Jim Friedland, Head of Investor Relations.
+
+Please go ahead.
+
+Jim Friedland, Head of Investor Relations: Thank you. Good afternoon, everyone, and welcome to Alphabet's Third Quarter 2025 Earnings Conference Call. With us today are Sundar Pichai, Philipp Schindler, and Anat Ashkenazi.
+
+Now, I'll quickly cover the Safe Harbor.
+
+Some of the statements that we make today regarding our business, operations, and financial performance may be considered forward-looking. Such statements are based on current expectations and assumptions that are subject to a number of risks and uncertainties.
+
+Actual results could differ materially. Please refer to our Forms 10-K and 10-Q, including the risk factors. We undertake no obligation to update any forward-looking statement.
+
+During this call, we will present both GAAP and non-GAAP financial measures. A reconciliation of non-GAAP to GAAP measures is included in today's earnings press release, which is distributed and available to the public through our Investor Relations website located at abc.xyz/investor.
+
+Our comments will be on year-over-year comparisons unless we state otherwise. And now, I'll turn the call over to Sundar.
+Sundar Pichai, CEO, Alphabet and Google: Thank you, Jim. Good afternoon, everyone, and thanks for joining us.
+
+This was a terrific quarter for Alphabet, driven by double-digit growth across every
+
+major part of our business. We are seeing AI now driving real business results across the company.
+
+We delivered our first-ever $100 billion dollar quarter. Five years ago, our quarterly revenue was at $50 billion. Our revenue number has doubled since then, and we're firmly in the generative AI era.
+
+In parallel, we've built for the long term and diversified, with successful businesses in Cloud, YouTube and Subscriptions.
+
+Our momentum is strong, and we're shipping at speed. As just a few examples:
+
+Our first party models, like Gemini, now process seven billion tokens per minute, via direct API use by our customers.
+
+The Gemini App now has over 650 million monthly active users, and queries increased by 3x from Q2.
+
+Cloud had another great quarter of accelerating growth with AI revenue as a key driver. Cloud backlog grew 46% quarter-over-quarter to $155 billion.
+
+And we crossed 300 million paid subscriptions, led by growth in Google One and YouTube Premium.
+
+Today, I'll discuss progress in our full-stack approach to AI, and then share highlights from Search, Cloud, YouTube and Waymo.
+
+As a reminder, our full-stack approach spans AI infrastructure; world-class research, including models and tooling; and our products and platforms that bring AI to people everywhere.
+
+First up, AI infrastructure. Our extensive and reliable infrastructure, which powers all of Google's products, is the foundation of our stack and a key differentiator. We are scaling the most advanced chips in our data centers, including GPUs from our partner NVIDIA, as well as our own purpose-built TPUs, and we are the only company providing a wide range of both.
+
+As we announced yesterday at NVIDIA GTC, we are now shipping the new A4X Max instances powered by NVIDIA GB300 to our Cloud customers.
+
+Our highly sought-after TPU portfolio is led by our seventh generation TPU, Ironwood, which will be generally available soon. We're investing in TPU capacity to meet the tremendous demand we are seeing from customers and partners, and we're excited
+
+that Anthropic recently shared plans to access up to one million TPUs. Next, world-class AI research, including models and tooling.
+Our models are world-leading. Gemini 2.5 Pro, Veo, Genie 3, and our viral sensation Nano Banana are among the very best in class.
+
+Over 230 million videos have been generated with Veo 3; and more than 13 million developers have built with our generative models. We're looking forward to the release of Gemini 3 later this year.
+
+Our research leadership is advancing next-frontier technologies. Last week, we announced that our Willow quantum chip achieved a major breakthrough, running an algorithm 13,000x faster than one of the world's best supercomputers. And the result is verifiable, paving the way to future practical applications.
+
+Speaking of quantum, let me congratulate Michel Devoret, our Chief Scientist for quantum hardware. He received a Nobel in Physics for early research he did in the 1980s. Three Nobels awarded to current Googlers in two years. Incredible!
+
+And third, our products and platforms.
+
+We're bringing AI to more people and developers than anyone else. In July, we announced that we processed 980 trillion monthly tokens across all our surfaces. We are now processing over 1.3 quadrillion monthly tokens, more than 20x growth in a year. Phenomenal.
+
+This quarter, we took big steps to reimagine Chrome as a browser powered by AI through deep integrations with Gemini and AI Mode in Search, with more agentic capabilities coming soon.
+
+In August, at Made by Google, we unveiled our Pixel 10 series of devices. They are the first with our most powerful chip designed to run on Gemini, Tensor G5. They are our best reviewed devices, ever.
+
+And last week we launched Android XR, our new operating system, with Samsung's Galaxy XR device. It brings new ways to use headsets and glasses, with Gemini at the core.
+
+Now, turning to highlights from Search.
+
+AI is driving an expansionary moment for Search. As people learn what they can do with our new AI experiences, they are increasingly coming back to search more. Search
+
+and its AI experiences are built to highlight the web, sending billions of clicks to sites every day.
+
+During the Q2 call, we shared that overall queries and commercial queries continued to grow year-over-year. This growth rate increased in Q3, largely driven by our AI investments in Search, most notably AI Overviews and AI Mode. Let me dive into the momentum we are seeing.
+
+As we've shared before, AI Overviews drive meaningful query growth. This effect was even stronger in Q3 as users continue to learn that Google can answer more of their questions. And it's particularly encouraging to see the effect was more pronounced with younger people.
+
+We are also seeing that AI Mode is resonating well with users. In the US, we've seen strong and consistent week-over-week growth in usage since launch, and queries doubled over the quarter.
+
+Over the last quarter, we rolled out AI Mode globally across 40 languages in record time. It now has over 75 million daily active users.
+
+And we shipped over 100 improvements to the product in Q3 - an incredibly fast pace. Most importantly, AI Mode is already driving incremental total query growth for Search. Philipp will talk more about monetization, and share how AI is helping people connect with businesses and shop on Search.
+
+Next, Google Cloud.
+
+Our complete enterprise AI product portfolio is accelerating growth in revenue, operating margins, and backlog. In Q3, customer demand strengthened in three ways.
+
+One, we are signing new customers faster. The number of new GCP customers increased by nearly 34% year-over-year.
+
+Two, we are signing larger deals. We have signed more deals over $1 billion through Q3 this year than we did in the previous two years combined.
+
+Third, we are deepening our relationships. Over 70% of existing Google Cloud customers use our AI products, including Banco BV, Best Buy, and FairPrice Group.
+
+As we scale, we are diversifying revenue. Today, 13 product lines are each at an annual run rate over $1 billion, and we are improving operating margin with
+highly-differentiated products built with our own technology.
+
+This deep product differentiation starts with our AI infrastructure. We have a decade of experience building AI Accelerators and today offer the widest array of chips. This leadership is winning customers like HCA Healthcare, LG AI Research, and Macquarie Bank, and it's why nine of the top ten AI labs choose Google Cloud.
+
+We are also the only Cloud provider offering our own leading generative AI models, including Gemini, Imagen, Veo, Chirp and Lyria. Adoption is rapidly accelerating. In Q3, revenue from products built on our generative AI models grew more than 200%
+year-over-year.
+
+Over the past 12 months, nearly 150 Google Cloud customers each processed approximately one trillion tokens with our models for a wide range of applications. For example, WPP is creating campaigns with up to 70% efficiency gains. Swarovski has increased email open rates by 17% and accelerated campaign localization by 10x.
+
+Earlier this month, we launched Gemini Enterprise, the new front door for AI in the workplace, and we are seeing strong adoption for agents built on this platform. Our packaged enterprise agents in Gemini Enterprise are optimized for a variety of domains, are highly differentiated and offer significant out-of-box value to customers. We have already crossed two million subscribers across 700 companies.
+
+Next, YouTube. In the living room, YouTube has remained number one in streaming watch time in the U.S. for more than two years, according to Nielsen.
+
+Last month marked YouTube's first time as a live NFL broadcaster. This exclusive global broadcast, live from Brazil, drew more than 19 million fans and set a new record for most concurrent viewers of a live stream on YouTube.
+
+YouTube Shorts also continues to perform well. In the US, Shorts now earn more revenue per watch hour than traditional in-stream on YouTube.
+
+At our Made on YouTube event, we rolled out a number of AI-powered features that are helping creators supercharge creation and build their businesses.
+
+AI is now streamlining the entire content creation workflow, from generative video tools and more efficient editing, to AI-powered insights that help creators optimize their channels. We're also using AI to expand monetization, automatically identifying products to make their videos more shoppable. Philipp will discuss in more detail.
+
+And finally, Waymo. Next year, Waymo aims to open service in London, and they're working to bring service to Tokyo. They have also announced expansions to Dallas, Nashville, Denver and Seattle, and secured permission to operate fully autonomously at San Jose and San Francisco airports. Autonomous testing continues to scale in New
+
+York City.
+
+The new Waymo for Business allows enterprises to offer Waymo as a work travel option.
+
+And we launched Waymo Teens accounts in Phoenix this summer. We're pleased to see usage steadily increase, with positive feedback from teens and their parents alike.
+
+Waymo's growth and momentum are strong and 2026 is shaping up to be an exciting year.
+
+Overall, a milestone quarter. The incredible work of our teams is driving momentum across the board, and our leadership in AI positions us so well for the opportunity ahead.
+
+I want to thank all of our partners and our employees for their hard work and an excellent Q3.
+
+With that, I'll turn it over to Philipp.
+
+Philipp Schindler, SVP and CBO, Google: Thanks, Sundar, and hello, everyone.
+
+I'll quickly cover performance for Google Services for the quarter, then structure the rest of my remarks around the great progress we are delivering across Search, Ads, YouTube and Partnerships.
+
+Google Services revenues were $87 billion for the quarter, up 14% year-on-year, driven by accelerated growth in Search and YouTube, partially offset by a year-on-year decline in Network revenues.
+
+Adding some further color to our results:
+
+The 15% increase in Search and Other was led by growth across all major verticals, with the largest contributions from Retail and Financial Services.
+
+YouTube saw similar performance across verticals. Its 15% growth in advertising revenues was driven by direct response, followed by brand.
+
+Starting with Search and Other revenues which delivered over $56 billion in revenue for the quarter. As Sundar mentioned, AI is driving an expansionary moment and transforming how people use Google Search. Our investments in new AI experiences, such as AI Overviews and AI Mode, continue to drive growth in overall queries, including commercial queries, creating more opportunities for monetization.
+
+These AI experiences are enhancing how people connect with businesses and shop on Search. We recently added shopping capabilities in AI Mode, which now help people shop conversationally in Search, and we expanded try-on capabilities to more clothing items, now available to anyone in the U.S.
+
+Lastly, we're making it easier for consumers to benefit from deals through new loyalty offerings like personalized annotations on organic results and ads.
+
+Looking at monetization, businesses can now tap into our most powerful AI search experiences. Using our most advanced AI models, we can understand and predict intent like never before, unlocking entirely new commercial pathways to provide valuable new consumer connections and helping us monetize even more efficiently.
+
+Rolled out globally in September, AI Max in Search is already used by hundreds of thousands of advertisers, currently making it the fastest-growing AI-powered Search Ads product. In Q3 alone, AI Max unlocked billions of net new queries. By delivering the most relevant ad across surfaces and matching advertisers against additional queries they weren't reaching before, AI Max helps advertisers discover new customers at the exact moment they need their product or service.
+
+Kayak, for example, looked to grow conversions while staying within their ROAS goals. After turning on AI Max in Search, they grew the conversion value by 12% in early tests.
+
+We continue to infuse generative AI capabilities at every step of the marketing process. We rolled out Imagen4 in Asset Studio and Product Studio, helping businesses produce more and better creatives. On the measurement front, we enriched the model supporting Meridian, our Marketing Mix Model, with additional variables. And more granular reporting in PMax is making bidding more effective.
+
+Financial Services company SoFi has been using PMax to meet its ambitious growth targets and helped drive a 39% improvement in its conversion volume year-over-year.
+
+Moving to YouTube, where we saw accelerated revenue growth.
+
+Our recommendation systems are driving robust watch time growth in our key monetization areas like Shorts and Living Room. As we leverage Gemini models, we are seeing further discovery improvement.
+
+On direct response, we're excited about the growth in revenue we're seeing, especially from small and medium advertisers adopting Demand Gen.
+
+We also improved performance on Demand Gen, with over 100 launches helping to increase conversion value by more than 40% for advertisers using target-based bidding on YouTube. The Retail vertical continues to lead our growth on YouTube, with Demand Gen helping us further monetize shopping-related categories.
+
+Looking at the Living Room, our long-term bet, more advertisers are adopting interactive, direct response ads, leading to an annual revenue run rate exceeding $1 billion globally for this format.
+
+For our viewers, we continue to give fans greater access across sports, while tapping into the best of YouTube's product innovation and creator-led content. Sundar mentioned that we expanded our NFL partnership with our first-ever exclusive, global broadcast of an NFL game. Brands loved the opportunity, and we sold all our ad inventory within a couple of weeks.
+
+Looking at creators, a significant force behind the thriving YouTube creator economy is the collaboration between creators and brands. Tools like direct linking to deals websites in Shorts and swappable brand segments in long-form will soon help creators show how they deliver great value for brands.
+
+Thanks to a collaboration with Dude Perfect, Comcast's Xfinity drove an 8% search lift, beating other Xfinity ads' recall lift on Shorts by 34%. At the same time it decreased the cost per lifted user by 50% when compared to the next most efficient ad.
+
+We continue to invest in AI-powered features that are helping creators supercharge creation and build their businesses. With Veo3 integration and Speech to Song, creators go from idea to iteration quicker and new channel insights help them better understand performance.
+
+Ending on YouTube with our Subscriptions products, we're also seeing momentum with strong growth in offerings such as YouTube Music & Premium and YouTube TV.
+
+We're also applying Gemini internally to help us serve customers with increased speed, intelligence, and efficiency. Our Sales teams use Gemini enriched with Ads knowledge to streamline customer interactions. This increased productivity by over 10%, led to hundreds of millions in incremental revenue, and frees up sellers to engage with more customers at a deeper, more strategic level.
+
+In our Customer Support division, Gemini-powered solutions have managed over 40 million customer sessions so far this year and resolved hundreds of thousands of customer inquiries. And we're just getting started.
+
+As always, I'll wrap with the progress we're seeing across Partnerships where our
+
+customers tap into the strength and breadth of Google's products to accelerate their transformation.
+
+Revolut, the global financial services company, leverages Google Cloud's Vertex AI platform and Gemini models to help power its advanced customer service chatbot, develop new hyper-personalized financial products and offer predictive insights.
+Revolut is also increasing its presence on YouTube, adopting Veo 3 for personalized creatives, making Google a key ads partner for delivering growth and launching new markets.
+
+In closing, I'd like to thank Googlers everywhere for their contributions to our success and, as always, to our customers and partners for their continued trust.
+
+And, of course, a huge thanks to all of you as we celebrate 25 Years of Google Ads. Anat, over to you!
+Anat Ashkenazi, SVP and CFO, Alphabet and Google: Thank you, Philipp.
+
+My comments will focus on year-over-year comparisons for the third quarter, unless I state otherwise.
+
+I will start with results at the Alphabet level, and will then cover our segment results. I'll end with some commentary on our outlook for the fourth quarter of 2025.
+
+We had an outstanding quarter in Q3continuing the strong momentum we've had throughout the year, delivering double-digit revenue growth across Search and YouTube advertising; Subscriptions, Platforms and Devices; and Google Cloud.
+
+Consolidated revenue reached $102.3 billion, a 16% year-over-year increase, or 15% in constant currency.
+
+Total Cost of Revenue was $41.4 billion, up 13%. TAC was $14.9 billion, up 8%.
+
+Other Cost of Revenues was $26.5 billion, up 16%, with the increase primarily driven by content acquisition costs, largely for YouTube, followed by depreciation, and other technical infrastructure operations costs.
+
+Total operating expenses increased 28% to $29.7 billion. R&D expenses increased by 22%, driven by compensation and depreciation expenses related to our AI efforts.
+
+Sales and Marketing expenses were flat.
+
+And G&A expenses increased meaningfully, primarily due to the $3.5 billion charge related to the European Commission fine mentioned in the earnings press release.
+
+Operating income increased 9% this quarter to $31.2 billion, and operating margin was 30.5%.Excluding the EC fine, operating income increased 22%, and operating margin was 33.9%.
+
+Operating margin benefited from strong revenue growth and continued efficiencies in our expense base, offset by the legal charge and a significant increase in depreciation expense.
+
+Other income and expenses was $12.8 billion, primarily due to unrealized gains in our non-marketable equity securities portfolio.
+
+Net income increased 33% to $35 billion, and earnings per share increased 35% to
+$2.87.
+
+We generated free cash flow of $24.5 billion in the third quarter and $73.6 billion for the trailing 12 months.
+
+Free cash flow in Q3 benefited from strong operating cash flow and recent tax changes regarding the timing of when research and development costs are expensed and assets are depreciated. This was partially offset by higher CapEx.
+
+We ended the quarter with $98.5 billion in cash and marketable securities.
+
+Turning to segment results. Google Services revenues increased 14% to $87.1 billion, reflecting strength in Google Search, YouTube advertising, and Subscriptions.
+
+Google Search and Other advertising revenues increased by 15% to $56.6 billion, representing another robust quarter with continued growth across all major verticals, with the largest contributions from Retail and Financial Services.
+
+YouTube advertising revenues increased 15% to $10.3 billion, driven by direct response advertising, followed by brand.
+
+Network advertising revenues of $7.4 billion were down 3%.
+
+Subscriptions, Platforms and Devices revenues increased 21% this quarter to
+$12.9 billion, driven by very strong growth in both YouTube and Google One subscriptions.
+
+Google Services operating income increased 9% to $33.5 billion. Operating margin
+
+declined year-over-year to 38.5%, as healthy revenue growth and continued efficiencies in our expense base were offset by the impact of the EC fine, which was fully reflected in the Google Services segment.
+
+Turning to the Google Cloud segment, which again delivered very strong results this quarter as Cloud continued to benefit from our enterprise AI optimized stack, including our own custom TPUs and our industry-leading AI models.
+
+Cloud revenue increased by 34% to $15.2 billion in the third quarter, driven by strong performance in GCP, which continued to grow at a rate that was much higher than Cloud's overall revenue growth rate.
+
+GCP's growth was driven by enterprise AI products, which are generating billions in quarterly revenue.We had strong growth in enterprise AI Infrastructure and enterprise AI solutions, which benefited from demand for our industry-leading models, including Gemini 2.5.
+
+Core GCP was also a meaningful contributor to growth.
+
+And we had double-digit growth in Workspace, which was driven by an increase in average revenue per seat and the number of seats.
+
+Cloud operating income increased by 85% to $3.6 billion, and operating margin increased from 17.1% in the third quarter last year to 23.7% this quarter.
+
+The expansion in Cloud operating margin was driven by strong revenue performance and continued efficiencies in our expense base, partially offset by higher technical infrastructure usage costs, which includes depreciation expense and other operations costs, such as energy.
+
+Google Cloud's backlog increased 46% sequentially and 82% year-over-year, reaching
+$155 billion at the end of the third quarter. The increase was driven primarily by strong demand for enterprise AI.
+
+As Sundar mentioned earlier, Cloud has signed more billion-dollar deals in the first nine months of 2025 than in the past two years combined.
+
+In Other Bets, revenues were $344 million, and operating loss was $1.4 billion in the third quarter.
+
+Within Other Bets, we continue to allocate more resources to businesses like Waymo, where we see opportunities to create substantial value.
+
+With respect to CapEx in the third quarter, our CapEx was $24 billion. The vast majority of our CapEx was invested in technical infrastructure, with approximately 60% of that investment in servers and 40% in data center and networking equipment.
+
+In Q3, we returned capital to shareholders through repurchases of stock of $11.5 billion and dividend payments of $2.5 billion.
+
+Turning to our outlook, I would like to provide some commentary on factors that will impact our business performance in the fourth quarter of 2025, as well as an updated outlook for CapEx for the year.
+
+First, in terms of revenues, we're pleased with the overall momentum of our business. At the current spot rates, we could see an FX tailwind to our revenues in Q4. However, the volatility in exchange rates could affect the impact of FX on Q4 revenues.
+
+As for our segments, in Google Services, year-over-year comparisons in Advertising will be negatively impacted by the strong spend on U.S. elections in the fourth quarter of 2024, particularly on YouTube.
+
+In Cloud, demand for our products remains high as evidenced by the accelerated revenue growth and the $49 billion sequential increase in Cloud backlog in Q3.
+
+In GCP, we see strong demand for enterprise AI Infrastructure, including TPUs and GPUs, Enterprise AI Solutions, driven by demand for Gemini 2.5 and our other AI models, and core GCP infrastructure and other services, such as Cybersecurity and Data Analytics.
+
+As I've mentioned on previous earnings calls, while we have been working hard to increase capacity and have improved the pace of server deployments and data center construction, we still expect to remain in a tight demand/supply environment in Q4 and 2026.
+
+Moving to investments. We're continuing to invest aggressively due to the demand we're experiencing from Cloud customers as well as the growth opportunities we see across the company.
+
+We now expect CapEx to be in the range of $91 billion to $93 billion in 2025, up from our previous estimate of $85 billion, keeping in mind that the timing of cash payments can cause variability in the reported CapEx number.
+
+Looking out to 2026, we expect a significant increase in CapEx and will provide more detail on our fourth quarter earnings call.
+
+In terms of expenses, first, as I've mentioned on previous earnings calls, the significant increase in our investments in technical infrastructure will continue to put pressure on the P&L in the form of higher depreciation expenses and related data center operations costs, such as energy.
+
+In the third quarter, depreciation increased $1.6 billion year-on-year to $5.6 billion, reflecting a growth rate of 41%. Given the overall increase in CapEx investments, we expect the growth rate in depreciation to accelerate slightly in Q4.
+
+Second, we expect sales and marketing expenses to be more heavily weighted to the end of the year, in part to support product launches and the holiday season.
+
+Q3 was a strong quarter and we're excited with the adoption of our AI products, helped by a rapid pace of innovation and great execution by our teams. This translated into strong momentum in Search; YouTube Ads; Subscriptions, Platforms and Devices; and Cloud, resulting in our first $100 billion-plus quarter.
+
+Now, Sundar, Philipp, and I will now take your questions.
+
+Operator: Thank you. As a reminder, to ask a question, you will need to press *1 on your telephone. To prevent any background noise, we ask that you please mute your line once your question has been stated. Our first question comes from Brian Nowak with Morgan Stanley. Your line is now open.
+
+Brian Nowak (Morgan Stanley): Great. Thanks for taking my questions, everyone.
+
+The first one, maybe for Philipp or Sundar, it's on agentic e-commerce and agentic travel. There's a lot of external Wall Street discussion about agentic e-commerce potentially monetizing at a lower rate than Search.
+
+So the question is: What factors are you most focused on to sort of ensure a smooth transition for your Search business and for your advertisers as you move over to a more agentic world?
+
+And the second one, Sundar, is on Waymo. How far are we from an integration of Waymo into more of the core Gemini capabilities and the users on the platform taking your user data,; where I'm going, what hotel I'm staying at, what airport I'm staying at, and integrate that into Waymo, so you can actually have users use their profiles to pre-schedule Waymos? How far off is that? What do we have to do?
+
+Philipp Schindler, SVP and CBO, Google: Hello, Brian. Great question.
+
+This is all early, but we see agentic experiences really as additive to the way people
+
+seek information. It helps us answer people's tough questions. It helps people get stuff done, and it helps businesses in the process. And we're working on multiple agentic experiences across key verticals, such as Travel, Commerce, Shopping, and so on.
+
+And we're paying a lot of attention to creating a seamless user experience but also to the fact that we need to integrate different partner ecosystems in a way that it creates value for them.
+
+By the way, we're also working closely with a lot of our partners on the other side through our Cloud services to improve their own agentic experiences.
+
+So maybe we go a little deeper on the shopping side where we actually use AI already, very actively, to improve the shopping experience.
+
+As you know, we launched a more visual experience on AI Mode. That gives people a much more intuitive, conversational way to shop. You can simply describe what you're looking for now, like the way you talk to a friend, and it will show you the visual shopping results.
+
+And then we think about building an agentic shopping future, and it has to be one, again, that benefits both users and merchants here and you know that AI Mode also introduced new agentic checkout, which will let shoppers use like agentic AI to buy products from merchant sites and so on.
+
+We have a partnership with Paypal to help merchants build agentic commerce experiences. We have new open protocols for agent-to-agent transactions and so on and so on.
+
+Sundar Pichai, CEO, Alphabet and Google: And, Brian, on Waymo, great question. I was reflecting, I think, on the exact same topic. I'm scheduled to meet with the team to do a review on it in a few weeks out.
+
+It is an exciting time. Waymo clearly is scaling up, particularly in 2026. And I think the possibility, as you said, of Gemini, particularly with the multimodal experience, as well as services like YouTube, I think there's a real opportunity to make the in-car experience dramatically better. Definitely something we are excited about, and you'll see newer experiences in 2026 for sure.
+
+Brian Nowak (Morgan Stanley): Great, thank you both.
+
+Operator: Our next question comes from Doug Anmuth with JP Morgan. Your line is now open.
+
+Doug Anmuth (JP Morgan): Thanks for taking the questions.
+
+Philipp, maybe you can just talk more about some of those drivers of the core Search strength.
+
+I guess, in particular, when you think about AI Overviews and AI Mode, we know that query growth is accelerating, but can you help us understand from there, kind of what happens in terms of clicks per query and conversion rates and pricing in these AI-driven Search formats?
+
+And then, Anat, can you talk about where you see opportunities in the core cost space as you look to make room to absorb the rapid growth in infrastructure and depreciation going forward? Thanks.
+
+Philipp Schindler, SVP and CBO, Google: So, let me give you a bit of vertical color first. In Q3, Search and Other revenues, again, delivered growth across all major verticals, as we said. It was from Retail and Financial Services. Healthcare was also the contributor to the growth here.
+
+Our new AI experiences, you mentioned them, AI Overviews, AI Mode, continue to drive growth in overall queries, including commercial queries, really creating more opportunities for monetization. AI Overviews are scaling up and are working for our entire user base. We're now scaled to over two billion users here, and we're continuing to expand ads in AI Overviews in English to more countries across desktop, mobile, and so on.
+
+And as I've shared before for AI Overviews, even at our current baseline of ads, below and within the AI response, overall, we see the monetization at approximately the same rate.
+
+So over time, we're excited about the opportunity of richer experiences in AI Mode and AI Overviews to basically open up the opportunity for also much richer placements.
+
+I think as I've said on a prior call, we manage the business to drive great outcomes for our users and an attractive ROI for our advertisers. We don't really manage to paid clicks and CPC targets, but as you will see in the 10-Q, paid clicks were up 7%
+year-on-year, and CPCs were up 7% year-on-year.
+
+Anat Ashkenazi, SVP and CFO, Alphabet and Google: Doug, and to your question around where else can we see more opportunity for efficiency and productivity, and I think you've heard me say before, this is not a one-time type of effort, but rather an ongoing way in which we manage the business.
+
+And the key here is that the more we drive productivity across our business, the more we can invest in the business for growth, and obviously, continue to drive improvement in the P&L.
+
+Some of the areas are things that you've heard us talk about in the past such as moderating the pace of headcount growth, optimizing real estate footprint, but also, as we invest more and more in our technical infrastructure, ensuring that we are optimizing that build-out and the overall technical infrastructure we have. You know that a lot of the data centers, for example, we build ourselves, so they're optimized, and we make sure we do them in the most efficient way.
+
+Sundar mentioned on one of the previous calls the productivity associated with leveraging AI for Google. So there's the example, the percent of code, now nearly half of all code generated by AI, that's the way for us to leverage AI to drive further productivity across the business.
+
+And obviously, we always look at making sure that when we provide services or products that we get the right economics and the right value for what we provide. So one good example is Shorts, which has a lower revenue share than in-stream, it helps to improve some of our gross margins.
+
+So, this is an effort we have ongoing. I've mentioned in the past that we have a headwind with depreciation, obviously, increasing alongside our CapEx increase. So we have efforts across the organization to ensure we run the business in the most disciplined and productive way, while continuing to invest for future growth.
+
+Doug Anmuth (JP Morgan): Thank you both.
+
+Operator: Our next question comes from Eric Sheridan with Goldman Sachs. Your line is now open.
+
+Eric Sheridan (Goldman Sachs): Thank you so much for taking the questions. Maybe two, if I could.
+
+Sundar, when you think about your custom silicon efforts across the organization, can you reflect a little bit about the opportunity set you see with each passing generation of custom silicon, both in terms of driving operating efficiencies inside the organization and potentially increased monetization efforts around those outside of the organization?
+
+Second question would be for Philipp. Obviously, we can see the YouTube Advertising revenue number in the reported results. Can you reflect a little bit about the scaling of the subscription side of YouTube offerings and how the two parts together maybe represent an interesting framework in thinking about the monetization side of YouTube
+
+increasingly being a mix of both Ads and Subscriptions? Thank you.
+
+Sundar Pichai, CEO, Alphabet and Google: Eric, overall, I would say we are seeing substantial demand for our AI infrastructure products, including TPU-based and
+GPU-based solutions. It is one of the key drivers of our growth over the past year, and I think on a going-forward basis, I think we continue to see very strong demand, and we are investing to meet that.
+
+I do think a big part of what differentiates Google Cloud, effectively, we have taken a deep full-stack approach to AI, so we are -- and that really plays out. We are the only hyperscaler who is really building offerings on our own models.
+
+And we are also highly differentiated on our own technology. So to your question, I think that does give us the opportunity to continue driving growth in operating margins in Cloud, as we have done in the past.
+
+And also, I think from a revenue sets, the infrastructure portion of our business to be a growth driver looking ahead as well.
+
+Philipp Schindler, SVP and CBO, Google: And to the second part of your question, look, just taking a quick step back, you know we often describe YouTube's business as a flywheel. Obviously, it first all starts with the creators, and we have significantly invested here to be the place that YouTube creators really call their home. That's a big piece of it, the number one piece.
+
+Viewers, of course. YouTube has billions of monthly logged in users, and every day, people watch billions of hours of video. And we talked about how our recommendation systems are driving robust watch time growth, and so on and so on.
+
+So, on the monetization side, YouTube's business is really powered, I would say, let's call it a twin engine monetization strategy, combining its advertising business and its growing subscription services.
+
+Both YouTube Ads and Subscriptions saw strong growth this quarter. And so looking at YouTube Music & Premium, users are on average delivering more value to creators, to music, media partners, and YouTube itself than even ad-supported users do.
+
+So, in other words, on average, a YouTube Music & Premium subscriber generates a meaningful, high-gross profit than they were as simply an ad-supported users. And fans come from all over the world, and they send this engagement through Ads and Subscription, which generates YouTube's revenues, and funds, is what I started with, these creators here, and this drives more viewership and engagement and so on. And that's the flywheel.And so our priority continues, like this growth cycle, we're happy with
+
+this twin-engine monetization strategy.
+
+Operator: Our next question comes from Mark Shmulik with Bernstein. Your line is now open.
+
+Mark Shmulik (Bernstein): Yes. Thanks for taking the questions.
+
+Sundar, with the strong adoption of Gemini AI Mode and Overviews across the user base, are there any meaningful differences to call out kind of around the behavior and depth of engagement for those users across the entire Google ecosystem?
+
+And then, Philipp, I know we kind of ask this most quarters, but I'm curious with some of the adoption you've seen around AI Overviews and Mode, how do you see the economics of Search evolving with the higher commercial and total query volume and how it kind of compares against the incremental cost to deliver these results. Thank you.
+
+Sundar Pichai, CEO, Alphabet and Google: Mark, look, I think obviously, AI Overviews are a natural part of the Google experience, and so engagement is very high.
+
+I would say AI Mode, you have varied cohorts. There are people who are casual users who are checking it out. And then, there's a core group which really likes AI Mode and is passionate about it, and so you see the early adopters. The product is resonating very strongly, and they are seeking it out. So, I think that's how I would highlight the difference. With Gemini, again, sort of engaged user base who are seeking out the product and so on.
+
+But across the board, I think the trajectory has been we are definitely seeing in each of those use cases a set of early adopters, and then more people coming in, and the people who are using it continue to use it more over time and report high user satisfaction.
+
+So I would say the underlying product metrics now are pretty encouraging to see as well.
+
+Philipp Schindler, SVP and CBO, Google: Look, and to the second part of your question, I think we covered before. Sundar covered the query development. And as I've just said before, for the AI Overviews, even at our current baseline of ads, whether above, below, and within the AI response, overall, we see the monetization at approximately the same rate, and this is a great baseline for further innovation. We talked about this. We're excited about where this can go.
+
+And on the AI Mode side, we're testing ads in AI Mode, and we'll continue to test and learn before we expand this any further. So this in combination with what we mentioned about the commercial query overall development, I think we're in a good place here.
+
+You could also argue that on queries that historically have not been well-monetized, we think there's a potential opportunity here where you can obviously imagine that we can build this out with smart AI integration.
+
+Operator: Our next question comes from Michael Nathanson with MoffettNathanson. Your line is now open.
+
+Michael Nathanson (MoffettNathanson): Thanks. I have two; one for Philipp and one for Anat.
+
+Philipp, it's clear that when people use AI Mode, the query length is much longer. Can you talk about how that longer length may be impacting your ability to drive ROAS and what you're seeing in terms of some of the early benefits of maybe longer query length?
+
+And then, Anat, you came to Alphabet from a pharmaceutical company. You've been there more than a year. Can you talk a bit about how you're working to look at ROIC internally, and what early signs are you seeing that gives you confidence that the spending is really driving better returns longer term? Thanks.
+
+Philipp Schindler, SVP and CBO, Google: Look, as Sundar shared, AI Mode has over 75 million daily active users and in the U.S. we see strong and consistent week-over-week growth in usage since launch, and the queries doubled over the quarter.
+
+And as I also mentioned, we're testing ads in AI Mode. We'll continue to test before we expand any further. It's really too early to tell and go into any of the details of that testing.
+
+Anat Ashkenazi, SVP and CFO, Alphabet and Google: Yes, and the question related to ROIC and how we look at just overall our business and where do we see early signs that are encouraging.
+
+So first, I would say it's not just early signs, because we're seeing returns, obviously, in the Cloud business. You've heard us talk about the fact that we already are generating billions of dollars from AI in the quarter.
+
+But then across the board, we have a rigorous framework and approach by which we evaluate these long-term investments that are meant to do two things. One is to ensure we build a resilient growth profile for the company, but also that we meet the demand of
+
+the customers that we have here in the near and mid-term.
+
+So we look at it across the business. We evaluate the potential return for each one of them, whether it's in Cloud, and I think that's more visible, obviously, externally given that you see the revenue generated and the fact that we're unable to meet at this point customer demand. We have more demand than we have supply.
+
+In our Ads business, you see the fact that we're investing to transform Search, as you heard from Philipp and Sundar with AIO and AI Mode. So we're excited to see how the investments are helping advertisers as well.
+
+YouTube where it is helping power recommendations. So when we make a decision on investment in the long-term, we go through a very rigorous process of assessing what the return could be and over what timeframe we will see that return to give us the high level of confidence to then invest and make those investments for the long-term.
+
+So it's a very rigorous approach.
+
+Michael Nathanson (MoffettNathanson): Thanks.
+
+Operator: Our next question comes from Ross Sandler with Barclays. Your line is now open.
+
+Ross Sandler (Barclays): Great. About 20% of Google's Search queries are commercial historically, and you talked a bunch on this call about how AI Overviews are kind of expanding the breadth of queries. Could you talk about how new products on the monetization side, like AI Max, are potentially increasing the percent of commercial queries?
+
+Philipp Schindler, SVP and CBO, Google: So, look, AI Max -- and I mentioned this in my call before -- improves the ability for advertisers to target a wider range of queries. Separately, there is the question of whether queries actually increase with AI Mode; and Sundar actually talked about it and mentioned the opportunity that he sees here. So I think it's important to separate those two things.
+
+And I personally also see, this is what I just said in my last remark, that I think over time, there's an opportunity to actually take, let's say, queries that are not fully commercial but could have an adjacent commercial relationship, to basically expand this into more attractive ads offerings, while creating a really interesting user experience at the same time.
+
+Sundar Pichai, CEO, Alphabet and Google: The only thing I would add is, just stepping back broadly, I think AI Overviews and AI Mode are dramatically improving
+
+Search. We can see it in user satisfaction, user quality, all our metrics. And they're universal in nature. They apply across the universality of human needs. So I think we are seeing it in breadth. And so, naturally over time, that'll apply to commercial categories as well.
+
+Operator: Our next question comes from Ken Gawrelski with Wells Fargo. Your line is now open.
+
+Ken Gawrelski (Wells Fargo): Thank you very much. Two questions, please.
+
+First, it appears more and more clear that all the new modes at Google, with Gemini, AI Overviews, AI Mode, even ChatGPT, is growing the addressable market for engagement in search-like behavior. Could you talk about what gives you confidence that it will also grow the addressable market for marketing activity and overall revenue associated with that behavior? That's question one.
+
+Question two is just more about, as you think about AI Mode, AI Overviews, and traditional Google Search, how do you think, do you see a world in 12 to 24 months, those all co-exist, and does the user eventually pick what mode they want? Does the algorithm pick the mode? Can you talk a little bit about how you think that will progress over the next 12 to 24 months? Thank you very much.
+
+Sundar Pichai, CEO, Alphabet and Google: Ken, thanks.
+
+Look, I think it's a dynamic moment, and I think we are meeting people in the moment with what they are trying to do.
+
+Obviously, Search is evolving, and between AI Overviews and AI Mode, I think we are able to kind of give that range of experience for people in this moment.
+
+Over time, you can expect us to make the experiences simpler in a way that -- just like we did universal search many, many years ago, we may have done text search, image search, video search, et cetera, and then we brought it together as universal search.So you will see evolutions like that, but I think we want to be sensitive to making sure that we are meeting the users in terms of what they are looking for.
+
+I think Gemini allows us to build a more personal, proactive, powerful AI assistant for that moment, and I think having the two surfaces, Search and Gemini, allows us to really serve users across the breadth of their needs.But over time, we will thoughtfully look for opportunities to make the experience better for users.
+
+And to the first part, I would broadly say, I do think we have been consistently saying for a while now this is an expansionary moment, and we are seeing people engage more,
+
+and I think when they do that, naturally, a portion of that information for users, those journeys are commercial in nature. So I would expect that to play out over time as well.
+
+Operator: Our last question comes from Justin Post with BAML. Your line is now open.
+
+Justin Post (BAML): Great. Just a couple.
+
+Sundar, I think you mentioned Gemini 3 is coming. Maybe you could comment on the pace of innovation in frontier models. Is there still just a tremendous amount of innovation, or is it slowing at all?
+
+And then, you mentioned a number of large deals signed in the last nine months for Cloud, which is great. Any changes in the economics of these deals, as far as long-term profitability? Anything we should be aware of? Thank you.
+
+Sundar Pichai, CEO, Alphabet and Google: Thanks, Justin.
+
+The first, on the pace of frontier model research and development. Look, I think two things are both simultaneously true. I'm incredibly impressed by the pace at which the teams are executing and the pace at which we are improving these models.
+
+But it also is true at the same time that each of the prior models you're trying to get better over is now getting more and more capable.
+
+So I think both the pace is increasing, but sometimes we are taking the time to put out a notably improved model. So I think that may take slightly longer.
+
+But I do think the underlying pace is phenomenal to see, and I'm excited about our Gemini 3.0 release later this year.
+
+On Cloud, I would point out as a sign of the momentum, I think the number of deals greater than $1 billion that we signed in the first three quarters of this year are greater than the two years prior. So we are definitely seeing strong momentum and we are executing at pace.
+
+And in terms of long-term economics, I would say that, again, us being a full-stack AI player, and the fact that we are developing highly differentiated products on our own technology I think will help us drive a good trajectory here, as you have seen over the past few years.
+
+Justin Post (BAML): Thank you.
+
+Operator: Thank you, and that concludes our question-and-answer session for today.
+
+I'd like to turn the conference back over to Jim Friedland for any further remarks.
+
+Jim Friedland, Head of Investor Relations: Thanks, everyone, for joining us today. We look forward to speaking with you again on our Fourth Quarter 2025 call. Thank you, and have a good evening.
+
+Operator: Thank you, everyone. This concludes today's conference call. Thank you for participating. You may now disconnect.
+
+

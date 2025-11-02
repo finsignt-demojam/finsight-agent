@@ -1,0 +1,20 @@
+[project]
+name = "finsight-agent"
+version = "1.0.0"
+description = "Metacognitive Multi-Agent Financial Analysis System for earnings call analysis"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "pydantic>=2.12.3",
+    "langchain-core>=1.0.2",
+    "langchain-openai>=1.0.1",
+    "langchain-community>=0.4.1",
+    "langgraph>=0.2.0",
+    "yfinance>=0.2.66",
+    "sec-edgar-downloader>=5.0.3",
+    "python-dotenv>=1.0.0",
+    "typing-extensions>=4.9.0",
+]
+
+[project.scripts]
+finsight = "src.main:main"
