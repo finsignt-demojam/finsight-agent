@@ -103,19 +103,19 @@ class FinSightAPI:
             driver_text = drivers_match.group(1).strip()
             key_drivers = [line.strip('- ').strip() for line in driver_text.split('\n') if line.strip().startswith('-')]
         
-        # Extract tool validations
-        tool_validations = []
-        validations_match = re.search(r'\*\*Tool Validations:\*\*\n(.*?)(?:\n\n##|\n\n---|\Z)', content, re.DOTALL)
-        if validations_match:
-            validation_text = validations_match.group(1).strip()
-            tool_validations = [line.strip('- ').strip() for line in validation_text.split('\n') if line.strip().startswith('-')]
-        
         # Extract news headlines
         news_headlines = []
-        headlines_match = re.search(r'\*\*News Headlines Analyzed:\*\*\n(.*?)(?:\n\n\*\*|\n\n##|\Z)', content, re.DOTALL)
+        headlines_match = re.search(r'## News Headlines Analyzed\n\n(.*?)(?:\n\n##|\Z)', content, re.DOTALL)
         if headlines_match:
             headlines_text = headlines_match.group(1).strip()
             news_headlines = [line.strip('- ').strip() for line in headlines_text.split('\n') if line.strip().startswith('-')]
+        
+        # Extract tool validations
+        tool_validations = []
+        validations_match = re.search(r'## Tool Validations\n\n(.*?)(?:\n\n##|\n\n---|\Z)', content, re.DOTALL)
+        if validations_match:
+            validation_text = validations_match.group(1).strip()
+            tool_validations = [line.strip('- ').strip() for line in validation_text.split('\n') if line.strip().startswith('-')]
         
         return {
             'ticker': metadata.get('ticker', ticker),
@@ -177,7 +177,7 @@ class FinSightAPI:
         
         # Extract tool validations
         tool_validations = []
-        validations_match = re.search(r'\*\*Tool Validations:\*\*\n(.*?)(?:\n\n##|\n\n---|\Z)', content, re.DOTALL)
+        validations_match = re.search(r'## Tool Validations\n\n(.*?)(?:\n\n##|\n\n---|\Z)', content, re.DOTALL)
         if validations_match:
             validation_text = validations_match.group(1).strip()
             tool_validations = [line.strip('- ').strip() for line in validation_text.split('\n') if line.strip().startswith('-')]
@@ -235,19 +235,19 @@ class FinSightAPI:
         
         # Extract tool validations
         tool_validations = []
-        validations_match = re.search(r'\*\*Tool Validations:\*\*\n(.*?)(?:\n\n###|\n\n##|\Z)', content, re.DOTALL)
+        validations_match = re.search(r'## Tool Validations\n\n(.*?)(?:\n\n##|\n\n---|\Z)', content, re.DOTALL)
         if validations_match:
             validation_text = validations_match.group(1).strip()
             tool_validations = [line.strip('- ').strip() for line in validation_text.split('\n') if line.strip().startswith('-')]
         
         # Extract transcript insights
         transcript_insights = []
-        insights_section = re.search(r'### Transcript Insights\n\n(.*?)(?:\n\n##|\n\n---|\Z)', content, re.DOTALL)
+        insights_section = re.search(r'## Transcript Insights\n+(.*?)(?:\n+##[^#]|\Z)', content, re.DOTALL)
         if insights_section:
             insights_text = insights_section.group(1).strip()
             # Parse individual insights
             insight_blocks = re.findall(
-                r'#### (.*?)\n\*\*Question:\*\*\s*(.*?)\n\*\*Answer:\*\*\s*(.*?)\n\*\*Confidence:\*\*\s*([\d.]+)%',
+                r'### (.*?)\n\n\*\*Question:\*\*\s*(.*?)\n\*\*Answer:\*\*\s*(.*?)\n\*\*Confidence:\*\*\s*([\d.]+)%',
                 insights_text,
                 re.DOTALL
             )
