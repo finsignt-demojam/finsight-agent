@@ -29,7 +29,7 @@ class ScalewayConfig:
 @dataclass
 class APIConfig:
     """External API configurations."""
-    tavily_api_key: str
+    tavily_search_api_key: str
     google_api_key: Optional[str] = None
 
 
@@ -59,7 +59,7 @@ class Config:
         
         # API Configuration
         self.api = APIConfig(
-            tavily_api_key=os.getenv("TAVILY_API_KEY", ""),
+            tavily_search_api_key=os.getenv("TAVILY_API_KEY", ""),
             google_api_key=os.getenv("GOOGLE_API_KEY", ""),
         )
         
@@ -74,7 +74,7 @@ class Config:
         required_checks = [
             (self.scaleway.project_id, "SCW_DEFAULT_PROJECT_ID"),
             (self.scaleway.api_key, "SCW_SECRET_KEY"),
-            (self.api.tavily_api_key, "TAVILY_API_KEY"),
+            (self.api.tavily_search_api_key, "TAVILY_API_KEY"),
         ]
         
         missing = [name for value, name in required_checks if not value]

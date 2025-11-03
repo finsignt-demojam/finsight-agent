@@ -161,7 +161,9 @@ class FinSightOrchestrator:
 **Analysis Plan:**
 """
             for i, step in enumerate(decision.analysis_plan, 1):
-                report += f"{i}. {step}\n"
+                # Strip any leading numbers and dots/spaces from LLM output
+                clean_step = step.lstrip('0123456789. ')
+                report += f"{i}. {clean_step}\n"
             
             report += f"\n**Agents Invoked:** {', '.join(decision.agents_to_invoke)}\n"
             report += f"**Coordinator Confidence:** {decision.confidence:.2%}\n"

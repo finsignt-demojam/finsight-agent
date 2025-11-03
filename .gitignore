@@ -12,6 +12,7 @@
 # data
 database
 data/output/*
+data/sec_filings/*
 
 # misc
 .DS_Store
@@ -19,3 +20,4 @@ data/output/*
 .env.development.local
 .env.test.local
 .env.production.local
+.vscode

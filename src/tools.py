@@ -20,7 +20,7 @@ class FinancialNewsSearchTool:
             self.search_tool = TavilySearchResults(
                 max_results=5,
                 search_depth="advanced",
-                api_key=api_key
+                tavily_api_key=api_key
             )
         else:
             self.search_tool = None
@@ -180,7 +180,7 @@ class TranscriptReaderTool:
 
 
 # Initialize global tool instances
-news_search_tool = FinancialNewsSearchTool(config.api.tavily_api_key)
+news_search_tool = FinancialNewsSearchTool(config.api.tavily_search_api_key)
 market_data_tool = MarketDataTool()
 sec_filing_tool = SECFilingTool(
     company_name=config.sec.company_name,
