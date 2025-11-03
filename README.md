@@ -181,6 +181,24 @@ class ScalewayConfig:
 
 ## Usage
 
+### Web Interface (Streamlit)
+
+**Launch the interactive web application:**
+```bash
+streamlit run app.py
+```
+
+The Streamlit interface provides a professional dashboard that displays:
+- Sentiment analysis with confidence metrics and news validation
+- Event detection with SEC filing verification
+- Volatility predictions with market data
+- Comprehensive final report with metacognitive analysis and guardrails
+- Tabbed interface separating analysis outputs from audit/validation data
+
+**Note:** Currently uses a stubbed API that reads pre-generated reports from `data/output/` for demonstration. To integrate with live backend, replace API stubs in `api.py` with calls to `src.orchestrator.FinSightOrchestrator`.
+
+---
+
 ### Command-Line Interface
 
 **Basic usage:**
@@ -407,6 +425,13 @@ finsight-agent/
 │   ├── output/                  # Generated reports (gitignored)
 │   └── sec_filings/             # SEC filings cache (gitignored)
 │
+├── app.py                        # 🚀 Streamlit web interface
+├── api.py                        # Stubbed API for Streamlit POC
+├── test_api.py                   # API stub testing script
+├── run_streamlit.sh              # Streamlit launcher script
+├── .streamlit/                   # Streamlit configuration
+│   └── config.toml              # UI theme and settings
+│
 ├── demo.py                       # Interactive demo script
 ├── examples.py                   # Programmatic usage examples
 ├── test_setup.py                 # Setup verification script
@@ -414,11 +439,14 @@ finsight-agent/
 ├── run_test.sh                   # Quick test script
 │
 ├── pyproject.toml               # Project metadata and dependencies
-├── requirements.txt             # Pip requirements
+├── requirements.txt             # Pip requirements (includes streamlit)
 ├── .env.example                 # Environment template
 ├── .gitignore                   # Git ignore rules
 │
-└── README.md                    # This file
+├── README.md                    # This file (main documentation)
+├── CHANGELOG.md                 # Version history and changes
+├── CODE_OF_CONDUCT.md           # Community guidelines
+└── CONTRIBUTING.md              # Contribution guidelines
 ```
 
 ---

@@ -11,3 +11,7 @@ sec-edgar-downloader>=5.0.3
 python-dotenv>=1.0.0
 typing-extensions>=4.9.0
 
+# Streamlit frontend requirements
+streamlit>=1.28.0
+pandas>=2.0.0
+
