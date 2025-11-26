@@ -12,6 +12,7 @@ An advanced multi-agent system that performs comprehensive financial analysis of
 - [Configuration](#configuration)
 - [Usage](#usage)
 - [Architecture](#architecture)
+- [Metacognitive Self-Model & LLM-as-Judge](#metacognitive-self-model--llm-as-judge)
 - [Output Reports](#output-reports)
 - [Project Structure](#project-structure)
 - [Agent Details](#agent-details)
@@ -28,18 +29,24 @@ An advanced multi-agent system that performs comprehensive financial analysis of
 
 ## Overview
 
-FinSight Agent is a production-ready multi-agent system that analyzes earnings call transcripts using:
+FinSight Agent is a production-ready multi-agent system that analyzes earnings call transcripts using **metacognitive self-awareness** and **LLM-as-Judge** patterns for runtime quality control:
 
+- **Metacognitive Self-Model**: System maintains awareness of its own capabilities, limitations, and confidence thresholds
+- **LLM-as-Judge**: Each agent self-scores confidence in findings; automated guardrail enforcement at runtime
 - **4 Specialized Agents**: Coordinator, Sentiment Analysis, Event Detection, and Volatility Prediction
 - **External Tool Validation**: Tavily news search, SEC EDGAR filings, and yfinance market data
-- **Metacognitive Reasoning**: Self-aware decision-making and performance assessment
-- **Individual Reports**: Separate markdown outputs for each agent plus comprehensive final report
-- **Guardrail System**: Confidence thresholds, source verification, and transparent limitations
+- **Confidence-Based Guardrails**: Automated quality control with 60-70% minimum confidence thresholds
+- **Individual Reports**: Separate markdown outputs for each agent plus comprehensive final report with transparency
+- **Transparent Uncertainty**: All outputs include confidence scores, limitations, and guardrail check results
 
 ### Key Features
 
+✅ **Metacognitive Self-Model** - System maintains self-awareness of capabilities, limitations, and boundaries  
+✅ **LLM-as-Judge Integration** - Each agent self-scores confidence; runtime guardrail enforcement  
 ✅ **Multi-Agent Orchestration** - LangGraph-based workflow with metacognitive coordinator  
 ✅ **Tool-Enhanced Validation** - Each agent uses external APIs to verify findings  
+✅ **Confidence Threshold Guardrails** - Automated quality control with 65-70% minimum thresholds  
+✅ **Transparent Uncertainty** - All outputs include confidence levels and limitations  
 ✅ **Structured Outputs** - Pydantic models ensure type safety and validation  
 ✅ **Individual Reports** - 4 separate markdown reports per analysis  
 ✅ **Configurable** - Customizable questions, thresholds, and model parameters  
@@ -283,9 +290,9 @@ This will:
 
 ## Architecture
 
-### Multi-Agent System
+### Multi-Agent System with Metacognitive Guardrails
 
-FinSight employs 4 specialized agents:
+FinSight employs 4 specialized agents with runtime metacognition and self-assessment:
 
 ```
 ┌─────────────────────────────────────────────────────────┐
@@ -296,9 +303,11 @@ FinSight employs 4 specialized agents:
 ┌────────────────────────────────────────────────────────┐
 │         🧠 COORDINATOR AGENT                           │
 │    (Metacognitive Planning & Orchestration)            │
-│  • Interprets query                                    │
+│  • Interprets query with self-awareness                │
 │  • Creates analysis plan                               │
-│  • Orchestrates agents                                 │
+│  • Self-scores confidence in understanding             │
+│  • Orchestrates agents based on self-model             │
+│  📊 LLM-as-Judge: Confidence Score (0-1)               │
 └────────────────────┬───────────────────────────────────┘
                      ↓
 ┌────────────────────────────────────────────────────────┐
@@ -315,6 +324,13 @@ FinSight employs 4 specialized agents:
 │   Tavily    │ │  SEC EDGAR   │ │  yfinance    │
 │   News      │ │  Filings     │ │  Market Data │
 │      ↓       │ │      ↓       │ │      ↓       │
+│  ANALYZE    │ │  ANALYZE     │ │  ANALYZE     │
+│      ↓       │ │      ↓       │ │      ↓       │
+│ 🔍 SELF-EVAL│ │ 🔍 SELF-EVAL │ │ 🔍 SELF-EVAL │
+│ Confidence  │ │ Confidence   │ │ Confidence   │
+│ vs Threshold│ │ vs Threshold │ │ vs Threshold │
+│  (≥65%)     │ │  (≥70%)      │ │  (≥60%)      │
+│      ↓       │ │      ↓       │ │      ↓       │
 │   Report    │ │   Report     │ │   Report     │
 └──────────────┘ └──────────────┘ └──────────────┘
         │            │             │
@@ -323,8 +339,10 @@ FinSight employs 4 specialized agents:
 ┌────────────────────────────────────────────────────────┐
 │       📝 SYNTHESIZE FINAL REPORT                       │
 │  • Combines all findings                              │
-│  • Applies guardrails                                 │
-│  • Generates comprehensive report                     │
+│  • Validates against self-model guardrails            │
+│  • Checks confidence scores vs thresholds             │
+│  • Tracks and reports guardrail violations            │
+│  • Generates comprehensive report with transparency   │
 └────────────────────────────────────────────────────────┘
 ```
 
@@ -339,6 +357,187 @@ FinSight employs 4 specialized agents:
    - Volatility Agent → yfinance validation → Report
 5. **Report Synthesis** → Comprehensive final report
 6. **Output** → 4 markdown files saved to `data/output/`
+
+---
+
+## Metacognitive Self-Model & LLM-as-Judge
+
+### Overview
+
+FinSight implements **runtime metacognition** and **LLM-as-Judge** patterns as core guardrail mechanisms. The system maintains self-awareness of its capabilities, limitations, and confidence levels throughout execution.
+
+### Self-Model Architecture
+
+The system maintains a comprehensive self-model (`FinSightSelfModel`) that includes:
+
+```python
+FinSightSelfModel:
+  ├── Mission: System's core purpose and goals
+  ├── Agent Capabilities: What each agent can/cannot do
+  │   ├── Capabilities list
+  │   ├── Limitations list
+  │   └── Confidence threshold (guardrail)
+  ├── Operating Boundaries: Hard limits and ethical constraints
+  ├── Active Guardrails: Runtime checks and validations
+  └── Guardrail Violations: Tracked incidents
+```
+
+### LLM-as-Judge: Confidence Scoring
+
+Each agent implements **self-evaluation** by scoring its own findings:
+
+#### 1. Coordinator Self-Assessment
+```python
+MetacognitiveDecision:
+  ├── user_intent: Understood goal
+  ├── analysis_plan: Step-by-step approach
+  ├── agents_to_invoke: Selected specialists
+  ├── confidence: Self-scored (0-1)  ← LLM judges itself
+  └── reasoning: Explanation of plan
+```
+
+#### 2. Agent Self-Scoring During Execution
+
+Each specialized agent scores its confidence:
+
+| Agent | Self-Scores | Threshold | Guardrail Action |
+|-------|------------|-----------|------------------|
+| **Sentiment** | Sentiment confidence (0-1) | ≥65% | Flag if below threshold |
+| **Event Detection** | Event confidence (0-1) | ≥70% | Flag if below threshold |
+| **Volatility** | Prediction confidence (0-1) | ≥60% | Flag if below threshold |
+
+#### 3. Runtime Guardrail Enforcement
+
+```
+┌─────────────────────────────────────────────────┐
+│  Agent completes analysis                       │
+│  ↓                                              │
+│  Agent scores own confidence (LLM-as-Judge)     │
+│  ↓                                              │
+│  Compare: confidence >= threshold?              │
+│  ├─ YES → ✓ Pass guardrail check               │
+│  └─ NO  → ⚠ Record guardrail violation         │
+│     ↓                                           │
+│     Add to guardrails_applied list              │
+│     ↓                                           │
+│     Include warning in final report             │
+└─────────────────────────────────────────────────┘
+```
+
+### Metacognitive Flow Diagram
+
+```
+┌──────────────────────────────────────────────────────────┐
+│                     SYSTEM START                         │
+│              Load FinSightSelfModel                      │
+│   (Mission, Capabilities, Boundaries, Thresholds)        │
+└───────────────────────┬──────────────────────────────────┘
+                        ↓
+┌──────────────────────────────────────────────────────────┐
+│               COORDINATOR (Metacognitive)                │
+│  1. Analyze user query                                   │
+│  2. Plan analysis approach                               │
+│  3. Self-score: confidence in understanding              │
+│  4. Check: confidence meets expectations?                │
+│     └─ Record decision reasoning                         │
+└───────────────────────┬──────────────────────────────────┘
+                        ↓
+┌──────────────────────────────────────────────────────────┐
+│                  FOR EACH AGENT:                         │
+│  ┌────────────────────────────────────────────────────┐  │
+│  │ 1. Execute Analysis (with external tool validation) │  │
+│  │    ├─ Sentiment: Analyze + Tavily news             │  │
+│  │    ├─ Events: Detect + SEC EDGAR filings           │  │
+│  │    └─ Volatility: Predict + yfinance data          │  │
+│  └────────────────────┬───────────────────────────────┘  │
+│                       ↓                                  │
+│  ┌────────────────────────────────────────────────────┐  │
+│  │ 2. LLM-as-Judge: Self-Score Confidence             │  │
+│  │    - Agent evaluates own findings                  │  │
+│  │    - Produces confidence score (0-1)               │  │
+│  │    - Example: "I am 72% confident in this result" │  │
+│  └────────────────────┬───────────────────────────────┘  │
+│                       ↓                                  │
+│  ┌────────────────────────────────────────────────────┐  │
+│  │ 3. Guardrail Check (Runtime)                       │  │
+│  │    Compare: agent_confidence >= threshold?         │  │
+│  │    ├─ Sentiment: >= 65%?                           │  │
+│  │    ├─ Events: >= 70%?                              │  │
+│  │    └─ Volatility: >= 60%?                          │  │
+│  └────────────────────┬───────────────────────────────┘  │
+│                       ↓                                  │
+│               ┌──────────────────┐                       │
+│               │ Below threshold? │                       │
+│               └────┬─────────┬───┘                       │
+│                YES ↓         ↓ NO                        │
+│     ┌──────────────────┐   ✓ Continue                   │
+│     │ Record Violation │                                 │
+│     │ - Timestamp      │                                 │
+│     │ - Agent name     │                                 │
+│     │ - Guardrail type │                                 │
+│     │ - Description    │                                 │
+│     │ - Action taken   │                                 │
+│     └──────────────────┘                                 │
+└───────────────────────┬──────────────────────────────────┘
+                        ↓
+┌──────────────────────────────────────────────────────────┐
+│              SYNTHESIZE FINAL REPORT                     │
+│  1. Combine all agent findings                           │
+│  2. Include metacognitive analysis                       │
+│  3. Display confidence summary table:                    │
+│     ┌────────────┬────────────┬───────────┬─────────┐   │
+│     │ Agent      │ Confidence │ Threshold │ Status  │   │
+│     ├────────────┼────────────┼───────────┼─────────┤   │
+│     │ Sentiment  │ 72%        │ 65%       │ ✓ Pass  │   │
+│     │ Events     │ 68%        │ 70%       │ ⚠ Low   │   │
+│     │ Volatility │ 75%        │ 60%       │ ✓ Pass  │   │
+│     └────────────┴────────────┴───────────┴─────────┘   │
+│  4. Report guardrail violations (if any)                 │
+│  5. Include system boundaries and disclaimers            │
+└──────────────────────────────────────────────────────────┘
+```
+
+### Key Benefits
+
+✅ **Transparent Uncertainty** - Every output includes confidence scores  
+✅ **Runtime Validation** - Agents self-assess before committing results  
+✅ **Automated Quality Control** - Threshold guardrails catch low-confidence outputs  
+✅ **Audit Trail** - All self-assessments and guardrail checks are logged  
+✅ **Metacognitive Reasoning** - Coordinator explains its decision-making process
+
+### Code Implementation
+
+The self-model and confidence checks are defined in `src/models.py`:
+
+```python
+class FinSightSelfModel(BaseModel):
+    """Metacognitive self-model for runtime guardrails."""
+    system_name: str = "FinSight Agent"
+    mission: str
+    agent_capabilities: List[AgentCapability]  # Each has confidence_threshold
+    operating_boundaries: List[str]
+    active_guardrails: List[str]
+    guardrail_violations: List[GuardrailViolation]
+
+class AgentCapability(BaseModel):
+    """Agent self-awareness: what it can/cannot do."""
+    agent_name: str
+    capabilities: List[str]
+    limitations: List[str]
+    confidence_threshold: float  # Guardrail threshold
+```
+
+Example confidence check in final report synthesis (from `src/orchestrator.py`):
+
+```python
+# Check agent confidence against self-model threshold
+threshold = self_model.agent_capabilities[0].confidence_threshold
+if sentiment.confidence >= threshold:
+    status = "✓ Pass"
+else:
+    status = "⚠ Low"
+    # Could trigger guardrail violation recording
+```
 
 ---
 
@@ -420,8 +619,6 @@ finsight-agent/
 │
 ├── data/                         # Data directories
 │   ├── input/                   # Input transcripts
-│   │   ├── Alphabet_2025_Q1_Earnings_Call_complete_transcript.txt
-│   │   └── GOOG_2025_Q3_Earnings_Transcript.txt
 │   ├── output/                  # Generated reports (gitignored)
 │   └── sec_filings/             # SEC filings cache (gitignored)
 │
@@ -453,27 +650,40 @@ finsight-agent/
 
 ## Agent Details
 
-### 1. Coordinator Agent
+### 1. Coordinator Agent (Metacognitive)
 
-**Role:** Metacognitive planning and orchestration
+**Role:** Metacognitive planning, orchestration, and self-assessment
 
 **Capabilities:**
-- Interprets user queries
+- Interprets user queries with self-awareness
 - Creates detailed analysis plans
 - Determines which agents to invoke
-- Provides reasoning and confidence
+- **Self-scores confidence** in understanding (LLM-as-Judge)
+- Provides explicit reasoning for decisions
 
-**Process:**
+**Metacognitive Process:**
 ```python
 1. Analyze user query
 2. Determine user intent
-3. Create analysis plan
-4. Select agents to invoke
-5. Assess confidence in plan
-6. Provide reasoning
+3. Create step-by-step analysis plan
+4. Select appropriate specialized agents
+5. 🔍 SELF-ASSESS: Score confidence in understanding (0-1)
+6. Provide transparent reasoning
+7. Return structured MetacognitiveDecision
 ```
 
-**Output:** `MetacognitiveDecision` with plan and confidence
+**Output:** `MetacognitiveDecision` with plan, confidence, and reasoning
+
+**Self-Assessment Example:**
+```python
+MetacognitiveDecision(
+    user_intent="Comprehensive financial analysis",
+    analysis_plan=["Step 1...", "Step 2...", ...],
+    agents_to_invoke=["sentiment_analysis", "event_detection", "volatility_prediction"],
+    confidence=0.85,  # ← Coordinator judges itself at 85% confident
+    reasoning="User query is clear and comprehensive. All three agents needed..."
+)
+```
 
 ---
 
@@ -488,6 +698,7 @@ finsight-agent/
 - Search recent financial news
 - Compare transcript vs. market sentiment
 - Identify sentiment drivers
+- **Self-score confidence** using LLM-as-Judge
 
 **Process:**
 ```python
@@ -497,13 +708,27 @@ finsight-agent/
 4. Compare transcript vs. news sentiment
 5. Generate sentiment classification
 6. Calculate sentiment score (-1.0 to 1.0)
-7. Assess confidence
-8. Save sentiment report
+7. 🔍 SELF-ASSESS: Score confidence in sentiment analysis (0-1)
+8. ✓ GUARDRAIL CHECK: confidence >= 65%?
+9. Save sentiment report with confidence score
 ```
 
-**Output:** `SentimentAnalysisResult` with classification, score, and validations
+**Output:** `SentimentAnalysisResult` with classification, score, validations, and **self-scored confidence**
 
-**Confidence Threshold:** 65%
+**Confidence Threshold (Guardrail):** ≥65%
+
+**Self-Assessment Example:**
+```python
+SentimentAnalysisResult(
+    overall_sentiment="positive",
+    sentiment_score=0.72,
+    confidence=0.68,  # ← Agent judges itself at 68% confident
+    market_sentiment="Generally positive market reaction...",
+    key_sentiment_drivers=["Revenue growth", "AI initiatives"],
+    tool_validations=["Validated with 5 Tavily news articles"]
+)
+# Guardrail: 68% >= 65% ✓ Pass
+```
 
 ---
 
@@ -518,6 +743,7 @@ finsight-agent/
 - Download SEC filings (8-K, 10-Q, 10-K)
 - Verify events against official sources
 - Assess event materiality
+- **Self-score confidence** using LLM-as-Judge
 
 **Process:**
 ```python
@@ -526,13 +752,26 @@ finsight-agent/
 3. Cross-reference events with filings
 4. Verify event details
 5. Assess impact (high/medium/low)
-6. Determine confidence
-7. Save event detection report
+6. 🔍 SELF-ASSESS: Score confidence in event detection (0-1)
+7. ✓ GUARDRAIL CHECK: confidence >= 70%?
+8. Save event detection report with confidence score
 ```
 
-**Output:** `SignificantEventDetectionResult` with events and validations
+**Output:** `SignificantEventDetectionResult` with events, validations, and **self-scored confidence**
 
-**Confidence Threshold:** 70%
+**Confidence Threshold (Guardrail):** ≥70% (Highest threshold due to verification requirements)
+
+**Self-Assessment Example:**
+```python
+SignificantEventDetectionResult(
+    events=[...],
+    total_events_found=3,
+    verified_count=2,
+    confidence=0.75,  # ← Agent judges itself at 75% confident
+    tool_validations=["Verified against SEC 8-K filings", "Cross-referenced 10-Q"]
+)
+# Guardrail: 75% >= 70% ✓ Pass
+```
 
 ---
 
@@ -546,7 +785,8 @@ finsight-agent/
 - Answer structured questions from transcript
 - Retrieve historical volatility data
 - Analyze price movements
-- Integrate sentiment and event data
+- Integrate sentiment and event data from other agents
+- **Self-score confidence** using LLM-as-Judge
 
 **Process:**
 ```python
@@ -554,16 +794,32 @@ finsight-agent/
 2. Get historical volatility (1-month) from yfinance
 3. Get price movement data
 4. Retrieve stock information
-5. Integrate sentiment results
-6. Integrate event results
-7. Predict future volatility
+5. Integrate sentiment results from Sentiment Agent
+6. Integrate event results from Event Detection Agent
+7. Predict future volatility (multi-modal synthesis)
 8. Calculate volatility score (0.0 to 1.0)
-9. Save volatility report
+9. 🔍 SELF-ASSESS: Score confidence in prediction (0-1)
+10. ✓ GUARDRAIL CHECK: confidence >= 60%?
+11. Save volatility report with confidence score
 ```
 
-**Output:** `VolatilityPredictionResult` with prediction and validations
+**Output:** `VolatilityPredictionResult` with prediction, validations, and **self-scored confidence**
 
-**Confidence Threshold:** 60%
+**Confidence Threshold (Guardrail):** ≥60% (Lower threshold due to inherent prediction uncertainty)
+
+**Self-Assessment Example:**
+```python
+VolatilityPredictionResult(
+    predicted_volatility="moderate",
+    volatility_score=0.48,
+    confidence=0.65,  # ← Agent judges itself at 65% confident
+    historical_volatility=0.22,
+    sentiment_impact="Positive sentiment reduces expected volatility",
+    event_impact="2 high-impact events increase volatility",
+    tool_validations=["Historical data from yfinance (30 days)"]
+)
+# Guardrail: 65% >= 60% ✓ Pass
+```
 
 ---
 
@@ -642,37 +898,64 @@ movement = market_data_tool.get_price_movement(
 
 ## Guardrails & Safety
 
-### Active Guardrails
+### Overview
 
-1. **Confidence Threshold Enforcement**
-   - Each agent has minimum confidence requirements
-   - Below threshold triggers warnings in reports
-   - Ensures quality of outputs
+FinSight implements **runtime metacognitive guardrails** powered by the self-model and LLM-as-Judge patterns. Unlike static rule-based systems, these guardrails involve the AI reasoning about its own capabilities and confidence during execution.
 
-2. **Source Verification Requirement**
-   - All findings must cite sources
-   - Tool validations tracked and reported
-   - Transparency in evidence
+### Active Guardrails (Runtime)
 
-3. **Investment Advice Prohibition**
-   - Explicitly avoids stock recommendations
-   - No buy/sell advice
-   - Educational purposes only
+#### 1. **Confidence Threshold Enforcement** (LLM-as-Judge)
+- **Mechanism**: Each agent self-scores confidence in its findings (0-1)
+- **Check**: Runtime comparison against agent-specific thresholds
+- **Action**: Below-threshold results trigger warnings and are flagged in reports
+- **Implementation**: Confidence scores embedded in structured outputs (Pydantic models)
 
-4. **Transparent Limitation Disclosure**
-   - All reports include disclaimers
-   - Limitations clearly stated
-   - Confidence levels always shown
+**Example Flow:**
+```python
+# Agent generates result with self-assessment
+result = SentimentAnalysisResult(
+    overall_sentiment="positive",
+    sentiment_score=0.72,
+    confidence=0.68,  # LLM judges itself at 68% confident
+    ...
+)
 
-### Confidence Thresholds
+# Runtime guardrail check
+if result.confidence < threshold (0.65):
+    record_guardrail_violation(...)
+```
 
-| Agent | Threshold | Purpose |
-|-------|-----------|---------|
-| Sentiment Analysis | 65% | Minimum for sentiment claims |
-| Event Detection | 70% | Minimum for event verification |
-| Volatility Prediction | 60% | Minimum for volatility predictions |
+#### 2. **Source Verification Requirement**
+- **Mechanism**: All findings must cite external validation sources
+- **Check**: `tool_validations` field must be populated
+- **Action**: Reports show which tools validated each finding
+- **Transparency**: Clear audit trail in every report
 
-### Operating Boundaries
+#### 3. **Investment Advice Prohibition** (Self-Model Boundary)
+- **Mechanism**: System self-model defines operating boundaries
+- **Check**: Coordinator is aware of this boundary during planning
+- **Action**: Explicitly avoids stock recommendations in all outputs
+- **Purpose**: Legal/ethical compliance, educational use only
+
+#### 4. **Transparent Limitation Disclosure** (Metacognitive Awareness)
+- **Mechanism**: Each agent declares its limitations in the self-model
+- **Check**: Limitations included in `AgentCapability` definitions
+- **Action**: All reports include disclaimers and confidence levels
+- **Purpose**: User awareness of system boundaries
+
+### Confidence Thresholds (Guardrail Parameters)
+
+| Agent | Threshold | Purpose | Defined In |
+|-------|-----------|---------|------------|
+| Sentiment Analysis | **≥65%** | Minimum for sentiment claims | `AgentCapability.confidence_threshold` |
+| Event Detection | **≥70%** | Minimum for event verification | `AgentCapability.confidence_threshold` |
+| Volatility Prediction | **≥60%** | Minimum for volatility predictions | `AgentCapability.confidence_threshold` |
+
+**These thresholds are part of the self-model and can be adjusted based on use case risk tolerance.**
+
+### Operating Boundaries (Self-Model Constraints)
+
+These boundaries are encoded in the system's self-model and inform agent behavior:
 
 ✗ NO personalized investment advice  
 ✗ NO stock buy/sell recommendations  
@@ -681,27 +964,79 @@ movement = market_data_tool.get_price_movement(
 ✓ Must disclose all confidence levels  
 ✓ Must cite all sources  
 
-### Guardrail Tracking
+### Guardrail Tracking & Runtime Monitoring
 
-All guardrail checks are tracked and reported in the final report:
+All guardrail checks are **actively monitored during execution** and reported in the final report.
+
+#### Guardrail Violation Structure
+
+When confidence falls below threshold:
+
+```python
+GuardrailViolation(
+    timestamp: "2025-01-15 14:32:10",
+    agent: "Event Detection Agent",
+    guardrail_type: "Confidence Threshold",
+    description: "Confidence 68% below threshold 70%",
+    action_taken: "Flagged in report, included with warning"
+)
+```
+
+#### Example Report Output (No Violations)
 
 ```markdown
-## Guardrails Applied
+## 5. Guardrails and System Boundaries
 
-Guardrail Checks Performed: 0
+**Guardrail Checks Performed:** 0
 
-Active Guardrails:
+*All confidence thresholds met. No guardrail violations detected.*
+
+**Active Guardrails:**
 - Confidence threshold enforcement
 - Source verification requirement
 - Investment advice prohibition
 - Transparent limitation disclosure
 
-Operating Boundaries:
+**Operating Boundaries:**
 - NO personalized investment advice or stock recommendations
 - NO guarantees about future stock performance
 - All outputs are for educational and analytical purposes only
 - Must disclose confidence levels and limitations
 ```
+
+#### Example Report Output (With Violations)
+
+```markdown
+## 5. Guardrails and System Boundaries
+
+**Guardrail Checks Performed:** 1
+
+- **Confidence Threshold** (Event Detection Agent)
+  - Confidence 68% fell below required threshold of 70%
+  - Action: Flagged in report with low-confidence warning
+
+**Active Guardrails:**
+- Confidence threshold enforcement ← *TRIGGERED*
+- Source verification requirement
+- Investment advice prohibition
+- Transparent limitation disclosure
+```
+
+#### Confidence Summary Table (LLM-as-Judge Results)
+
+Every final report includes a table showing how each agent scored itself:
+
+```markdown
+## 6. System Confidence Summary
+
+| Agent | Confidence | Threshold | Status |
+|-------|-----------|-----------|--------|
+| Sentiment Analysis | 72% | 65% | ✓ Pass |
+| Event Detection | 68% | 70% | ⚠ Low  |
+| Volatility Prediction | 75% | 60% | ✓ Pass |
+```
+
+This transparency allows users to assess the reliability of each component independently.
 
 ---
 
