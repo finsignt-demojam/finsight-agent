@@ -1,3 +1,5 @@
+![badge-labs](https://user-images.githubusercontent.com/327285/230928932-7c75f8ed-e57b-41db-9fb7-a292a13a1e58.svg)
+
 # FinSight Agent: Metacognitive Multi-Agent Financial Analysis System
 
 An advanced multi-agent system that performs comprehensive financial analysis of earnings calls using metacognitive reasoning and specialized expert agents.
@@ -297,7 +299,7 @@ FinSight employs 4 specialized agents with runtime metacognition and self-assess
 ```
 ┌─────────────────────────────────────────────────────────┐
 │                    USER INPUT                           │
-│  📄 Transcript Path + 🏢 Ticker Symbol                  │
+│  📄 Transcript Path + 🏢 Ticker Symbol                   │
 └────────────────────┬────────────────────────────────────┘
                      ↓
 ┌────────────────────────────────────────────────────────┐
@@ -317,32 +319,32 @@ FinSight employs 4 specialized agents with runtime metacognition and self-assess
         ┌────────────┼────────────┐
         ↓            ↓             ↓
 ┌──────────────┐ ┌──────────────┐ ┌──────────────┐
-│ 😊 SENTIMENT │ │ 🔍 EVENT     │ │ 📊 VOLATILITY│
+│ 😊 SENTIMENT │ │ 🔍 EVENT      │ │ 📊 VOLATILITY│
 │    AGENT     │ │  DETECTION   │ │  PREDICTION  │
 │              │ │    AGENT     │ │    AGENT     │
 │      ↓       │ │      ↓       │ │      ↓       │
-│   Tavily    │ │  SEC EDGAR   │ │  yfinance    │
-│   News      │ │  Filings     │ │  Market Data │
+│   Tavily     │ │  SEC EDGAR   │ │  yfinance    │
+│   News       │ │  Filings     │ │  Market Data │
 │      ↓       │ │      ↓       │ │      ↓       │
-│  ANALYZE    │ │  ANALYZE     │ │  ANALYZE     │
+│  ANALYZE     │ │  ANALYZE     │ │  ANALYZE     │
 │      ↓       │ │      ↓       │ │      ↓       │
-│ 🔍 SELF-EVAL│ │ 🔍 SELF-EVAL │ │ 🔍 SELF-EVAL │
-│ Confidence  │ │ Confidence   │ │ Confidence   │
-│ vs Threshold│ │ vs Threshold │ │ vs Threshold │
-│  (≥65%)     │ │  (≥70%)      │ │  (≥60%)      │
+│ 🔍 SELF-EVAL │ │ 🔍 SELF-EVAL  │ │ 🔍 SELF-EVAL │
+│ Confidence   │ │ Confidence   │ │ Confidence   │
+│ vs Threshold │ │ vs Threshold │ │ vs Threshold │
+│  (≥65%)      │ │  (≥70%)      │ │  (≥60%)      │
 │      ↓       │ │      ↓       │ │      ↓       │
-│   Report    │ │   Report     │ │   Report     │
+│   Report     │ │   Report     │ │   Report     │
 └──────────────┘ └──────────────┘ └──────────────┘
         │            │             │
         └────────────┼─────────────┘
                      ↓
 ┌────────────────────────────────────────────────────────┐
 │       📝 SYNTHESIZE FINAL REPORT                       │
-│  • Combines all findings                              │
-│  • Validates against self-model guardrails            │
-│  • Checks confidence scores vs thresholds             │
-│  • Tracks and reports guardrail violations            │
-│  • Generates comprehensive report with transparency   │
+│  • Combines all findings                               │
+│  • Validates against self-model guardrails             │
+│  • Checks confidence scores vs thresholds              │
+│  • Tracks and reports guardrail violations             │
+│  • Generates comprehensive report with transparency    │
 └────────────────────────────────────────────────────────┘
 ```
 
@@ -415,8 +417,8 @@ Each specialized agent scores its confidence:
 │  Agent scores own confidence (LLM-as-Judge)     │
 │  ↓                                              │
 │  Compare: confidence >= threshold?              │
-│  ├─ YES → ✓ Pass guardrail check               │
-│  └─ NO  → ⚠ Record guardrail violation         │
+│  ├─ YES → ✓ Pass guardrail check                │
+│  └─ NO  → ⚠ Record guardrail violation          │
 │     ↓                                           │
 │     Add to guardrails_applied list              │
 │     ↓                                           │
@@ -445,7 +447,7 @@ Each specialized agent scores its confidence:
 ┌──────────────────────────────────────────────────────────┐
 │                  FOR EACH AGENT:                         │
 │  ┌────────────────────────────────────────────────────┐  │
-│  │ 1. Execute Analysis (with external tool validation) │  │
+│  │ 1. Execute Analysis (with external tool validation)│  │
 │  │    ├─ Sentiment: Analyze + Tavily news             │  │
 │  │    ├─ Events: Detect + SEC EDGAR filings           │  │
 │  │    └─ Volatility: Predict + yfinance data          │  │
@@ -455,7 +457,7 @@ Each specialized agent scores its confidence:
 │  │ 2. LLM-as-Judge: Self-Score Confidence             │  │
 │  │    - Agent evaluates own findings                  │  │
 │  │    - Produces confidence score (0-1)               │  │
-│  │    - Example: "I am 72% confident in this result" │  │
+│  │    - Example: "I am 72% confident in this result"  │  │
 │  └────────────────────┬───────────────────────────────┘  │
 │                       ↓                                  │
 │  ┌────────────────────────────────────────────────────┐  │
@@ -470,7 +472,7 @@ Each specialized agent scores its confidence:
 │               │ Below threshold? │                       │
 │               └────┬─────────┬───┘                       │
 │                YES ↓         ↓ NO                        │
-│     ┌──────────────────┐   ✓ Continue                   │
+│     ┌──────────────────┐   ✓ Continue                    │
 │     │ Record Violation │                                 │
 │     │ - Timestamp      │                                 │
 │     │ - Agent name     │                                 │
@@ -485,13 +487,13 @@ Each specialized agent scores its confidence:
 │  1. Combine all agent findings                           │
 │  2. Include metacognitive analysis                       │
 │  3. Display confidence summary table:                    │
-│     ┌────────────┬────────────┬───────────┬─────────┐   │
-│     │ Agent      │ Confidence │ Threshold │ Status  │   │
-│     ├────────────┼────────────┼───────────┼─────────┤   │
-│     │ Sentiment  │ 72%        │ 65%       │ ✓ Pass  │   │
-│     │ Events     │ 68%        │ 70%       │ ⚠ Low   │   │
-│     │ Volatility │ 75%        │ 60%       │ ✓ Pass  │   │
-│     └────────────┴────────────┴───────────┴─────────┘   │
+│     ┌────────────┬────────────┬───────────┬─────────┐    │
+│     │ Agent      │ Confidence │ Threshold │ Status  │    │
+│     ├────────────┼────────────┼───────────┼─────────┤    │
+│     │ Sentiment  │ 72%        │ 65%       │ ✓ Pass  │    │
+│     │ Events     │ 68%        │ 70%       │ ⚠ Low   │    │
+│     │ Volatility │ 75%        │ 60%       │ ✓ Pass  │    │
+│     └────────────┴────────────┴───────────┴─────────┘    │
 │  4. Report guardrail violations (if any)                 │
 │  5. Include system boundaries and disclaimers            │
 └──────────────────────────────────────────────────────────┘
