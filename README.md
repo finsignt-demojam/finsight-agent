@@ -292,73 +292,82 @@ This will:
 
 ## Architecture
 
-### Multi-Agent System with Metacognitive Guardrails
+### Understanding the Metacognitive Execution Flow
 
-FinSight employs 4 specialized agents with runtime metacognition and self-assessment:
+![FinSight Metacognitive Flow Diagram](docs/assets/finsight_metacognitive_flow_diagram.png)
 
-```
-┌─────────────────────────────────────────────────────────┐
-│                    USER INPUT                           │
-│  📄 Transcript Path + 🏢 Ticker Symbol                   │
-└────────────────────┬────────────────────────────────────┘
-                     ↓
-┌────────────────────────────────────────────────────────┐
-│         🧠 COORDINATOR AGENT                           │
-│    (Metacognitive Planning & Orchestration)            │
-│  • Interprets query with self-awareness                │
-│  • Creates analysis plan                               │
-│  • Self-scores confidence in understanding             │
-│  • Orchestrates agents based on self-model             │
-│  📊 LLM-as-Judge: Confidence Score (0-1)               │
-└────────────────────┬───────────────────────────────────┘
-                     ↓
-┌────────────────────────────────────────────────────────┐
-│              📄 LOAD TRANSCRIPT                        │
-└────────────────────┬───────────────────────────────────┘
-                     ↓
-        ┌────────────┼────────────┐
-        ↓            ↓             ↓
-┌──────────────┐ ┌──────────────┐ ┌──────────────┐
-│ 😊 SENTIMENT │ │ 🔍 EVENT      │ │ 📊 VOLATILITY│
-│    AGENT     │ │  DETECTION   │ │  PREDICTION  │
-│              │ │    AGENT     │ │    AGENT     │
-│      ↓       │ │      ↓       │ │      ↓       │
-│   Tavily     │ │  SEC EDGAR   │ │  yfinance    │
-│   News       │ │  Filings     │ │  Market Data │
-│      ↓       │ │      ↓       │ │      ↓       │
-│  ANALYZE     │ │  ANALYZE     │ │  ANALYZE     │
-│      ↓       │ │      ↓       │ │      ↓       │
-│ 🔍 SELF-EVAL │ │ 🔍 SELF-EVAL  │ │ 🔍 SELF-EVAL │
-│ Confidence   │ │ Confidence   │ │ Confidence   │
-│ vs Threshold │ │ vs Threshold │ │ vs Threshold │
-│  (≥65%)      │ │  (≥70%)      │ │  (≥60%)      │
-│      ↓       │ │      ↓       │ │      ↓       │
-│   Report     │ │   Report     │ │   Report     │
-└──────────────┘ └──────────────┘ └──────────────┘
-        │            │             │
-        └────────────┼─────────────┘
-                     ↓
-┌────────────────────────────────────────────────────────┐
-│       📝 SYNTHESIZE FINAL REPORT                       │
-│  • Combines all findings                               │
-│  • Validates against self-model guardrails             │
-│  • Checks confidence scores vs thresholds              │
-│  • Tracks and reports guardrail violations             │
-│  • Generates comprehensive report with transparency    │
-└────────────────────────────────────────────────────────┘
-```
+What you are looking at is the cognitive architecture of the FinSight Agent. In traditional RAG or agent systems, the flow is often linear: Input → Retrieve → Generate. But in high-stakes financial domains, that isn't enough. We need safety, accuracy, and self-correction.
 
-### Data Flow
+This diagram illustrates our **Metacognitive Execution Flow**. It's not just about doing the task; it's about monitoring the task while it's happening. Let's walk through the journey of a user query as it navigates our Agentic Execution Loop, our Dynamic Guardrails, and our LLM-as-Judge evaluation system.
+
+#### Phase 1: Orchestration & Context
+
+It starts here on the left. The **User Query** enters the system and hits our **Orchestration Agent**.
+
+**The Orchestrator:** Think of this as the project manager. It doesn't do the heavy lifting; it plans. It decomposes the query into actionable sub-tasks.
+
+**The Self Model (Gray Box):** Crucially, the orchestrator consults the 'Self Model.' This is the agent's memory and context awareness. It asks: *"What do I know about this user? What is the current market context? Am I hallucinating stale data?"* This prevents the agent from starting off with bad assumptions.
+
+#### Phase 2: The Agentic Execution Loop
+
+Once the plan is set, we enter the **Blue Box**: the **Agentic Execution Loop**. This is where the work gets done by our specialist sub-agents. We don't rely on one generalist model; we delegate to specialists:
+
+- **Sentiment Agent**: Scrapes news and social signals to gauge market feeling.
+- **Event Agent**: Looks for hard quantitative data—earnings calls, fed rate changes, or specific filings.
+- **Volatility Agent**: Analyzes risk metrics and generates VIX-related insights.
+
+These agents work in parallel or sequence depending on the Orchestrator's plan, synthesizing raw data into a financial narrative.
+
+#### Phase 3: The Metacognitive Monitor
+
+Now, this is the **differentiator**. Most agents would just take that data and write a response. FinSight does not.
+
+It passes the data through the **Metacognitive Monitor (The Red Box)**. This is a real-time supervisor sitting inside the execution loop. It performs a **Dynamic Guardrail Check**:
+
+- **Compliance & Safety**: Is this financial advice? (If so, flag it).
+- **Data Integrity**: Do the numbers from the Volatility Agent match the trend from the Sentiment Agent?
+- **Hallucination Check**: Does the insight exist in the retrieved documents?
+
+**The Decision Diamond:**
+
+- **'No' (Pass)**: If no violation is found, we follow the Green line out to draft the response.
+- **'Yes' (Violation)**: If a violation is found, we trigger a **Corrective Signal** (The Red arrow). We don't crash; we self-correct immediately before generating a draft.
+
+#### Phase 4: Draft & Judge
+
+Assuming we pass the guardrails, we generate a **Draft Response**. But we still don't show it to the user. We send it to the **LLM-as-Judge**. This is a separate, highly capable model prompt-engineered strictly for evaluation. It scores the response based on custom scoring metrics:
+
+- Accuracy
+- Tone (Professional/Financial)
+- Completeness
+
+**The Evaluation Diamond:** This is the final gatekeeper.
+
+- **Score < Threshold (Red Path)**: If the response is mediocre or unsafe, the Judge rejects it. It sends feedback all the way back to the Orchestration Agent or the Correction Strategy module. The system literally 'retries' the thought process with new instructions.
+- **Score Acceptable (Green Path)**: Only when the score meets our high-quality threshold do we move to the final step.
+
+#### Conclusion: The Feedback Loop
+
+This **Red Feedback Loop** is what makes the agent 'Metacognitive.' It thinks about its thinking, learns from its own attempts within the session. It adjusts its plan, maybe asks the Sentiment Agent to look deeper, or asks the Volatility Agent to check a different timeframe.
+
+Ultimately, the user receives the **Final Response Delivery (Green Box)**. To them, it looks like a single instant answer. But under the hood, FinSight has planned, executed, monitored, fact-checked, judged, and potentially re-done the work to ensure the financial insight is actionable and safe.
+
+Also, as part of the Execution Flow process, we collected the entire trajectory and output of actions / evaluations during execution, which can serve for **audit / traceability purposes** and improve the system design in future iterations.
+
+### Data Flow Summary
 
 1. **User Input** → Transcript path + ticker symbol
-2. **Coordinator** → Plans analysis workflow
+2. **Orchestrator** → Metacognitive planning with self-model consultation
 3. **Load Transcript** → Reads and validates file
-4. **Agent Execution** → Sequential processing:
-   - Sentiment Agent → Tavily validation → Report
-   - Event Agent → SEC EDGAR validation → Report
-   - Volatility Agent → yfinance validation → Report
-5. **Report Synthesis** → Comprehensive final report
-6. **Output** → 4 markdown files saved to `data/output/`
+4. **Agentic Execution Loop** → Specialist agents process in parallel:
+   - Sentiment Agent → Tavily validation → Self-evaluation
+   - Event Agent → SEC EDGAR validation → Self-evaluation
+   - Volatility Agent → yfinance validation → Self-evaluation
+5. **Metacognitive Monitor** → Dynamic guardrail checks during execution
+6. **Draft Generation** → Synthesize findings with transparency
+7. **LLM-as-Judge** → Quality scoring and threshold enforcement
+8. **Feedback Loop** → Corrective actions if quality < threshold
+9. **Final Output** → 4 markdown reports saved to `data/output/` with audit trail
 
 ---
 
